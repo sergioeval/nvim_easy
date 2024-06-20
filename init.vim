@@ -16,7 +16,6 @@ call plug#begin('~/.local/share/nvim/plugged')
 
 call plug#end()
 
-
 " key map 
 let mapleader = " "
 
@@ -218,8 +217,12 @@ syntax on
 set spell " enable spell check (may need to download language package)
 set ttyfast " Speed up scrolling in Vim
 
-" Python path 
-let g:python3_host_prog = "/Users/sergioestrada/miniconda3/bin/python"
+" Python path /Users/sev/.local/share/virtualenvs/NvimPythonEnv-afGOxUW4/bin/python 
+"let g:coc_global_extensions = ['coc-python']
+"let g:python3_host_prog = "/Users/sev/.local/share/virtualenvs/NvimPythonEnv-afGOxUW4/bin/python"
+
+let g:python3_host_prog = system('poetry run which python')
+let g:python_host_prog = system('poetry run which python')
 
 
 colorscheme gruvbox
